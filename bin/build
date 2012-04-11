@@ -1,0 +1,6 @@
+#!/bin/bash
+
+base=$PWD
+
+cd automating-website-optimization && ./bin/build
+cd $base && node_modules/serve/bin/serve

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+mkdir -p grunt grunt-plugins node-build-script
+
+cat readme.md | grunt impress --template template.html > index.html
+echo done Generating intro
+
+cat grunt.md | grunt impress --template template.html > grunt/index.html
+echo done Generating grunt
+
+cat grunt-plugins.md | grunt impress --template template.html > grunt-plugins/index.html
+echo done Generating grunt-plugins
+
+cat node-build-script.md | grunt impress --template template.html > node-build-script/index.html
+
+echo done generate node-build-script/index.html
+
+echo Generating the "all-in-one-slide"
+cat readme.md \
+  grunt.md \
+  grunt-plugins.md \
+  node-build-script.md |
+  grunt impress --template template.html > all.html
+echo Done. all.html generated
