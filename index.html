@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=1024" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>Automating Website Optimizations</title>
+    <title>&#9731; .::. &#9731;</title>
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:regular,semibold,italic,italicsemibold|PT+Sans:400,700,400italic,700italic|PT+Serif:400,700,400italic,700italic" rel="stylesheet" />
 
     <style>
@@ -566,298 +566,42 @@ if not defined, the attributes takes the following defaults
 
 <div id="impress">
 
-  
+
   <section class="step slide" data-x="1" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h2>Automating Website Optimizations</h2>
-<ul>
-<li><a href="../">Introduction</a></li>
-<li><a href="../grunt/">Grunt</a></li>
-<li><a href="../grunt-plugins/">Grunt plugins</a></li>
-<li>» <a href="../node-build-script/">h5bp/node-build-script</a></li>
-</ul>
-
-  </section>
-  
-  <section class="step slide" data-x="1051" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
     <hr>
-<pre><code class="js">{
-  <span class="string">"author"</span>: <span class="string">"Mickael Daniel"</span>,
-  <span class="string">"github"</span>: <span class="string">"http://github.com/mklabs"</span>,
-  <span class="string">"twitter"</span>: <span class="string">"<span class="variable">@mklabs</span>"</span>,
-  <span class="string">"date"</span>: <span class="string">"new Date('Mon Apr 10 2012 19:00:00 GMT+0200')"</span>
-  <span class="string">"dependencies"</span>: {
-    <span class="string">"your-attention"</span>: <span class="string">"1.0.0"</span>
-  }
-}</code></pre>
 
   </section>
-  
+
+  <section class="step slide" data-x="1051" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2><i class="snowman"></i></h2>
+
+  </section>
+
   <section class="step slide" data-x="2101" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h2>h5bp/node-build-script</h2>
-<ul>
-<li><p><a href="https://github.com/h5bp/node-build-script">https://github.com/h5bp/node-build-script</a></p>
-</li>
-<li><p>Port of <a href="https://github.com/h5bp/ant-build-script">ant-build-script</a></p>
-</li>
-</ul>
+    <h2><i class="heart"></i></h2>
 
   </section>
-  
+
   <section class="step slide" data-x="3151" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h2>A Grunt Plugin</h2>
-<ul>
-<li><p>Now a Grunt Plugin (plugins were introduced in grunt 0.3.x)</p>
-</li>
-<li><p>Still very early stage of development</p>
-</li>
-</ul>
+    <h2><i class="bstar"></i></h2>
 
   </section>
-  
+
   <section class="step slide" data-x="4201" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h2>A Grunt Plugin - Install</h2>
-<p><em>1. Install the plugin</em>
-
-</p>
-<pre><code class="sh"><span class="comment"># next to your project's gruntfile</span>
-<span class="variable">$ </span><span class="identifier">npm</span> <span class="identifier">install</span> <span class="identifier">http</span><span class="symbol">:</span>/<span class="regexp">/nodeload.github.com/h</span>5<span class="identifier">bp</span>/<span class="identifier">node</span>-<span class="identifier">build</span>-<span class="identifier">script</span>/<span class="identifier">tarball</span>/<span class="identifier">master</span></code></pre>
-<p><em>2. Add the plugin as a project dependency in your package.json</em>
-
-</p>
-<pre><code class="javascript">"dependencies": {
-  "node-build-script": "http://nodeload.github.com/h5bp/node-build-script/tarball/master"
-}</code></pre>
+    <h2><i class="wstar"></i></h2>
 
   </section>
-  
+
   <section class="step slide" data-x="5251" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h3>A Grunt Plugin - Install</h3>
-<p>Load the plugin tasks - In your gruntfile:
-
-</p>
-<pre><code class="js">...
-// Load the plugin tasks <span class="keyword">and</span> helpers
-grunt.loadNpmTasks('node-build-script')
-
-// Default task.
-grunt.registerTask('default', <span class="literal">'lint qunit concat min'</span>);
-...</code></pre>
+    <h2><i class="atom"></i></h2>
 
   </section>
-  
+
   <section class="step slide" data-x="6301" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h3>A Grunt Plugin - Usage</h3>
-<pre><code class="sh">$ grunt --<span class="keyword">help</span></code></pre>
-
-  </section>
-  
-  <section class="step slide" data-x="7351" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h3>A Grunt Plugin - Tasks</h3>
-<ul>
-<li><strong>clean</strong>: Wipe the previous build dirs.</li>
-<li><strong>mkdirs</strong>: Prepares the build dirs.</li>
-<li><strong>css</strong>: Concats, replaces @imports and minifies CSS files.</li>
-<li><strong>rev</strong>: Automate the revving of assets and perform the hash rename</li>
-<li><strong>usemin</strong>: Replaces references to non-minified scripts / stylesheets</li>
-</ul>
-
-  </section>
-  
-  <section class="step slide" data-x="8401" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h3>A Grunt Plugin - Tasks</h3>
-<p>In addition to those tasks,
-there are a few additional tasks to help you in the process:
+    <h2><i class="tel"></i></h2>
+<p><i class="victory"></i>
 
 </p>
-<ul>
-<li><strong>serve</strong>: Spawns up a basic local http server (on both pubilsh /
-intermediate folder with different ports).</li>
-</ul>
-<ul>
-<li><strong>connect</strong>:  Spawns up local http sever with socket.io configured,
-it&#39;ll inject a tiny client side script + socket.io lib on <code>*.html</code>
-response.</li>
-</ul>
-<ul>
-<li><strong>reload</strong>: Alias for <code>connect watch:reload</code>.</li>
-</ul>
-
-  </section>
-  
-  <section class="step slide" data-x="9451" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h3>socket.io + watch combo</h3>
-<p>Gives you a great development environment
-
-</p>
-<ul>
-<li><p>Automatically reloads your browser whenever a file changes</p>
-</li>
-<li><p>Might re-trigger a given task before reloading</p>
-<ul>
-<li>like re-running the entire build script</li>
-<li>Re-run preprocessors (CoffeeScript, Less, Sass, w/e)</li>
-</ul>
-</li>
-</ul>
-
-  </section>
-  
-  <section class="step slide" data-x="10501" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h3>socket.io + watch combo</h3>
-<p><strong>process and build script needs to be almost immediate in this context</strong>
-
-</p>
-<p>and node is a pretty good candidate for that :p
-
-</p>
-
-  </section>
-  
-  <section class="step slide" data-x="11551" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h3>An experimental JSDOM based build script</h3>
-<p>The idea grown and original came from @necolas <a href="https://github.com/h5bp/html5-boilerplate/issues/831">proposal</a>.
-
-</p>
-<p>DOM-based build script can tremendously reduce the amount of configuration.
-
-</p>
-<p>If not simply removing the need of confirmation.
-
-</p>
-
-  </section>
-  
-  <section class="step slide" data-x="12601" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h3>An experimental JSDOM based build script</h3>
-<ul>
-<li>Ideally...</li>
-</ul>
-
-  </section>
-  
-  <section class="step slide" data-x="13651" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h3>An experimental JSDOM based build script</h3>
-<ul>
-<li>It just works!</li>
-</ul>
-
-  </section>
-  
-  <section class="step slide" data-x="14701" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h3>An experimental JSDOM based build script</h3>
-<p><strong>How it works</strong>
-
-</p>
-<p><a href="https://github.com/h5bp/node-build-script/wiki/dom">https://github.com/h5bp/node-build-script/wiki/dom</a>
-
-</p>
-<ul>
-<li>Works with &quot;plugins&quot;</li>
-</ul>
-
-  </section>
-  
-  <section class="step slide" data-x="15751" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h3>JSDOM based - Plugins</h3>
-<p>A plugin is a special jQuery &quot;plugin&quot; that can use the node (or grunt) api to do
-their task.
-
-</p>
-<p>The following plugins are implemented
-
-</p>
-<ul>
-<li><strong>css</strong>
-Relies on @import statement mainly which are inlined (with nested path
-rewrite) to serve a single optimized stylesheet.</li>
-</ul>
-<ul>
-<li><strong>js</strong>
-Concat, minify through uglify and serve a single concat&#39;d / minified script.</li>
-</ul>
-
-  </section>
-  
-  <section class="step slide" data-x="16801" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h3>JSDOM Based - Configuration</h3>
-<pre><code class="js">var h5bp = require(<span class="string">"node-build-script"</span>)<span class="comment">;</span>
-
-module<span class="preprocessor">.exports</span> = function(grunt) {
-
-  grunt<span class="preprocessor">.initConfig</span>({
-      ...,
-
-      dom: {
-          files: [<span class="string">"*.html"</span>, <span class="string">"views/**/*.html"</span>],
-          <span class="string">"script[data-build]"</span>    : h5bp<span class="preprocessor">.plugins</span><span class="preprocessor">.script</span>,
-          <span class="string">"link"</span>                  : h5bp<span class="preprocessor">.plugins</span><span class="preprocessor">.link</span>,
-          <span class="string">"img"</span>                   : h5bp<span class="preprocessor">.plugins</span><span class="preprocessor">.img</span>,
-          <span class="string">"script, link, img"</span>     : h5bp<span class="preprocessor">.plugins</span><span class="preprocessor">.rev</span>
-      },
-
-      ...
-  })<span class="comment">;</span>
-
-}<span class="comment">;</span></code></pre>
-
-  </section>
-  
-  <section class="step slide" data-x="17851" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h3>next h5bp/node-build-script</h3>
-<ul>
-<li><p>Windows support for dom based build</p>
-</li>
-<li><p>Manifest generation using <a href="https://github.com/jamesgpearce/confess">confess</a>
-and <a href="https://github.com/ariya/phantomjs">phantomjs</a></p>
-</li>
-<li><p>Sourcemap generation</p>
-<ul>
-<li>with google closure compiler, until we have a valid node-based solution*</li>
-<li><a href="https://github.com/mozilla/source-map">mozilla/sourcemap</a> might be a pretty good start</li>
-</ul>
-</li>
-</ul>
-
-  </section>
-  
-  <section class="step slide" data-x="18901" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h3>next h5bp/node-build-script</h3>
-<ul>
-<li><p>Better and more h5bp init templates.</p>
-</li>
-<li><p>Further integration in init templates of well-known project
-like <a href="https://github.com/twitter/bootstrap">twitter/bootstrap</a>
-or <a href="https://github.com/zurb/foundation">zurb/foundation</a>.</p>
-</li>
-</ul>
-
-  </section>
-  
-  <section class="step slide" data-x="19951" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h3>next h5bp/node-build-script</h3>
-<ul>
-<li>inline small images as data-uri</li>
-<li>remove console.log and other debugger statements</li>
-<li>cache manifest creation</li>
-<li>(how?) remove unused CSS</li>
-<li>(how?) dead code elimination</li>
-<li>image compression</li>
-<li>(how) video/audio transcoding</li>
-</ul>
-
-  </section>
-  
-  <section class="step slide" data-x="21001" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h3>Try it yourself</h3>
-<p>See the <a href="https://gist.github.com/c20d4310c005e31a5cfe">gist</a>
-
-</p>
-<blockquote>
-<p><a href="https://raw.github.com/gist/c20d4310c005e31a5cfe/install.sh">https://raw.github.com/gist/c20d4310c005e31a5cfe/install.sh</a>
-
-</p>
-</blockquote>
-<pre><code class="sh"><span class="variable">$ </span><span class="identifier">curl</span> <span class="identifier">https</span><span class="symbol">:</span>/<span class="regexp">/raw.github.com/gist</span><span class="regexp">/c20d4310c005e31a5cfe/install</span>.<span class="identifier">sh</span> | <span class="identifier">sh</span></code></pre>
 
   </section>
   ;
@@ -887,60 +631,6 @@ or <a href="https://github.com/zurb/foundation">zurb/foundation</a>.</p>
 // Let me show you the cogs that make impress.js run...
 (function(a,b){"use strict";var c=function(){var b=a.createElement("dummy").style,c="Webkit Moz O ms Khtml".split(" "),d={};return function(a){if(typeof d[a]=="undefined"){var e=a.charAt(0).toUpperCase()+a.substr(1),f=(a+" "+c.join(e+" ")+e).split(" ");d[a]=null;for(var g in f)if(b[f[g]]!==undefined){d[a]=f[g];break}}return d[a]}}(),d=function(a){return[].slice.call(a)},e=function(a,b){var d,e;for(d in b)b.hasOwnProperty(d)&&(e=c(d),e!==null&&(a.style[e]=b[d]));return a},f=function(a,b){return isNaN(a)?b||0:Number(a)},g=function(b){return a.getElementById(b)},h=function(b,c){return c=c||a,c.querySelector(b)},i=function(b,c){return c=c||a,d(c.querySelectorAll(b))},j=function(b,c,d){var e=a.createEvent("CustomEvent");e.initCustomEvent(c,!0,!0,d),b.dispatchEvent(e)},k=function(a){return" translate3d("+a.x+"px,"+a.y+"px,"+a.z+"px) "},l=function(a,b){var c=" rotateX("+a.x+"deg) ",d=" rotateY("+a.y+"deg) ",e=" rotateZ("+a.z+"deg) ";return b?e+d+c:c+d+e},m=function(a){return" scale("+a+") "},n=function(a){return" perspective("+a+"px) "},o=function(){return g(b.location.hash.replace(/^#\/?/,""))},p=function(a){var c=b.innerHeight/a.height,d=b.innerWidth/a.width,e=c>d?d:c;return a.maxScale&&e>a.maxScale&&(e=a.maxScale),a.minScale&&e<a.minScale&&(e=a.minScale),e},q=a.body,r=navigator.userAgent.toLowerCase(),s=c("perspective")!==null&&q.classList&&q.dataset&&r.search(/(iphone)|(ipod)|(android)/)===-1;s?(q.classList.remove("impress-not-supported"),q.classList.add("impress-supported")):q.className+=" impress-not-supported ";var t={},u={width:1024,height:768,maxScale:1,minScale:0,perspective:1e3,transitionDuration:1e3},v=function(){return!1},w=b.impress=function(c){if(!s)return{init:v,"goto":v,prev:v,next:v};c=c||"impress";if(t["impress-root-"+c])return t["impress-root-"+c];var r={},w=null,x=null,y=null,z=null,A=null,B=g(c),C=a.createElement("div"),D=!1,E=null,F=function(a){E!==a&&(j(a,"impress:stepenter"),E=a)},G=function(a){E===a&&(j(a,"impress:stepleave"),E=null)},H=function(a,b){var c=a.dataset,d={translate:{x:f(c.x),y:f(c.y),z:f(c.z)},rotate:{x:f(c.rotateX),y:f(c.rotateY),z:f(c.rotateZ||c.rotate)},scale:f(c.scale,1),el:a};a.id||(a.id="step-"+(b+1)),r["impress-"+a.id]=d,e(a,{position:"absolute",transform:"translate(-50%,-50%)"+k(d.translate)+l(d.rotate)+m(d.scale),transformStyle:"preserve-3d"})},I=function(){if(D)return;var b=h("meta[name='viewport']")||a.createElement("meta");b.content="width=device-width, minimum-scale=1, maximum-scale=1, user-scalable=no",b.parentNode!==a.head&&(b.name="viewport",a.head.appendChild(b));var g=B.dataset;z={width:f(g.width,u.width),height:f(g.height,u.height),maxScale:f(g.maxScale,u.maxScale),minScale:f(g.minScale,u.minScale),perspective:f(g.perspective,u.perspective),transitionDuration:f(g.transitionDuration,u.transitionDuration)},A=p(z),d(B.childNodes).forEach(function(a){C.appendChild(a)}),B.appendChild(C),a.documentElement.style.height="100%",e(q,{height:"100%",overflow:"hidden"});var k={position:"absolute",transformOrigin:"top left",transition:"all 0s ease-in-out",transformStyle:"preserve-3d"};e(B,k),e(B,{top:"50%",left:"50%",transform:n(z.perspective/A)+m(A)}),e(C,k),q.classList.remove("impress-disabled"),q.classList.add("impress-enabled"),y=i(".step",B),y.forEach(H),x={translate:{x:0,y:0,z:0},rotate:{x:0,y:0,z:0},scale:1},D=!0,j(B,"impress:init",{api:t["impress-root-"+c]})},J=function(a){return typeof a=="number"?a=a<0?y[y.length+a]:y[a]:typeof a=="string"&&(a=g(a)),a&&a.id&&r["impress-"+a.id]?a:null},K=null,L=function(a,c){if(!D||!(a=J(a)))return!1;b.scrollTo(0,0);var d=r["impress-"+a.id];w&&(w.classList.remove("active"),q.classList.remove("impress-on-"+w.id)),a.classList.add("active"),q.classList.add("impress-on-"+a.id);var g={rotate:{x:-d.rotate.x,y:-d.rotate.y,z:-d.rotate.z},translate:{x:-d.translate.x,y:-d.translate.y,z:-d.translate.z},scale:1/d.scale},h=g.scale>=x.scale;c=f(c,z.transitionDuration);var i=c/2;a===w&&(A=p(z));var j=g.scale*A;w&&w!==a&&G(w),e(B,{transform:n(z.perspective/j)+m(j),transitionDuration:c+"ms",transitionDelay:(h?i:0)+"ms"}),e(C,{transform:l(g.rotate,!0)+k(g.translate),transitionDuration:c+"ms",transitionDelay:(h?0:i)+"ms"});if(x.scale===g.scale||x.rotate.x===g.rotate.x&&x.rotate.y===g.rotate.y&&x.rotate.z===g.rotate.z&&x.translate.x===g.translate.x&&x.translate.y===g.translate.y&&x.translate.z===g.translate.z)i=0;return x=g,w=a,b.clearTimeout(K),K=b.setTimeout(function(){F(w)},c+i),a},M=function(){var a=y.indexOf(w)-1;return a=a>=0?y[a]:y[y.length-1],L(a)},N=function(){var a=y.indexOf(w)+1;return a=a<y.length?y[a]:y[0],L(a)};return B.addEventListener("impress:init",function(){y.forEach(function(a){a.classList.add("future")}),B.addEventListener("impress:stepenter",function(a){a.target.classList.remove("past"),a.target.classList.remove("future"),a.target.classList.add("present")},!1),B.addEventListener("impress:stepleave",function(a){a.target.classList.remove("present"),a.target.classList.add("past")},!1)},!1),B.addEventListener("impress:init",function(){var a="";B.addEventListener("impress:stepenter",function(c){b.location.hash=a="#/"+c.target.id},!1),b.addEventListener("hashchange",function(){b.location.hash!==a&&L(o())},!1),L(o()||y[0],0)},!1),q.classList.add("impress-disabled"),t["impress-root-"+c]={init:I,"goto":L,next:N,prev:M}};w.supported=s})(document,window),function(a,b){"use strict";var c=function(a,b){var c=null;return function(){var d=this,e=arguments;clearTimeout(c),c=setTimeout(function(){a.apply(d,e)},b)}};a.addEventListener("impress:init",function(d){var e=d.detail.api;a.addEventListener("keydown",function(a){(a.keyCode===9||a.keyCode>=32&&a.keyCode<=34||a.keyCode>=37&&a.keyCode<=40)&&a.preventDefault()},!1),a.addEventListener("keyup",function(a){if(a.keyCode===9||a.keyCode>=32&&a.keyCode<=34||a.keyCode>=37&&a.keyCode<=40){switch(a.keyCode){case 33:case 37:case 38:e.prev();break;case 9:case 32:case 34:case 39:case 40:e.next()}a.preventDefault()}},!1),a.addEventListener("click",function(b){var c=b.target;while(c.tagName!=="A"&&c!==a.documentElement)c=c.parentNode;if(c.tagName==="A"){var d=c.getAttribute("href");d&&d[0]==="#"&&(c=a.getElementById(d.slice(1)))}e.goto(c)&&(b.stopImmediatePropagation(),b.preventDefault())},!1),a.addEventListener("click",function(b){var c=b.target;while((!c.classList.contains("step")||!!c.classList.contains("active"))&&c!==a.documentElement)c=c.parentNode;e.goto(c)&&b.preventDefault()},!1),a.addEventListener("touchstart",function(a){if(a.touches.length===1){var c=a.touches[0].clientX,d=b.innerWidth*.3,f=null;c<d?f=e.prev():c>b.innerWidth-d&&(f=e.next()),f&&a.preventDefault()}},!1),b.addEventListener("resize",c(function(){e.goto(a.querySelector(".active"),500)},250),!1)},!1)}(document,window);
 </script>
-<script>
-(function(app) {
-
-  var $ = function(sel, context) {
-    context = context || document;
-    return Array.prototype.slice.call(context.querySelectorAll(sel));
-  };
-
-  var sections = $('#impress section'),
-    ln = sections.length;
-
-  var html = sections.map(function(el, i) {
-    return '<a href="$href" title="$title">$text</a>'
-      .replace('$href', '#step-' + (i + 1))
-      .replace('$title', 'Page ' + (i + 1))
-      .replace('$text', '✘');
-  });
-
-  var pager = document.createElement('p');
-  pager.id = 'pager';
-  pager.innerHTML = html.join(' ');
-  document.body.appendChild(pager);
-
-  window.addEventListener('hashchange', change, false);
-
-  function change () {
-    var hash = location.hash.replace(/^#\/?/, ''),
-      active = $('.active', pager)[0],
-      step = document.querySelector('a[href="#' + hash + '"]');
-
-    if(active) {
-      active.className = active.className.replace('active', '');
-      active.textContent = '✔';
-    }
-
-    step.className += 'active';
-    step.textContent = '☝';
-
-    if(!step) return;
-    var done = false;
-    $('a', pager).forEach(function(el, i) {
-      if(el.href === step.href) {
-        done = true;
-        return;
-      }
-
-      el.textContent = done ? '✘' : '✔';
-    });
-  }
-
-
-  app.init();
-  change();
-})(impress());
-</script>
+<script>impress().init()</script>
 </body>
 </html>

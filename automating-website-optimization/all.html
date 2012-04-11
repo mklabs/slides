@@ -1741,10 +1741,271 @@ Running "ascii" task
   </section>
   
   <section class="step slide" data-x="82951" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
-    <h2>Introduction</h2>
-<p>Intro
+    <h2>h5bp/node-build-script</h2>
+<ul>
+<li><p><a href="https://github.com/h5bp/node-build-script">https://github.com/h5bp/node-build-script</a></p>
+</li>
+<li><p>Port of <a href="https://github.com/h5bp/ant-build-script">ant-build-script</a></p>
+</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="84001" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>A Grunt Plugin</h2>
+<ul>
+<li><p>Now a Grunt Plugin (plugins were introduced in grunt 0.3.x)</p>
+</li>
+<li><p>Still very early stage of development</p>
+</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="85051" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h2>A Grunt Plugin - Install</h2>
+<p><em>1. Install the plugin</em>
 
 </p>
+<pre><code class="sh"><span class="comment"># next to your project's gruntfile</span>
+<span class="variable">$ </span><span class="identifier">npm</span> <span class="identifier">install</span> <span class="identifier">http</span><span class="symbol">:</span>/<span class="regexp">/nodeload.github.com/h</span>5<span class="identifier">bp</span>/<span class="identifier">node</span>-<span class="identifier">build</span>-<span class="identifier">script</span>/<span class="identifier">tarball</span>/<span class="identifier">master</span></code></pre>
+<p><em>2. Add the plugin as a project dependency in your package.json</em>
+
+</p>
+<pre><code class="javascript">"dependencies": {
+  "node-build-script": "http://nodeload.github.com/h5bp/node-build-script/tarball/master"
+}</code></pre>
+
+  </section>
+  
+  <section class="step slide" data-x="86101" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>A Grunt Plugin - Install</h3>
+<p>Load the plugin tasks - In your gruntfile:
+
+</p>
+<pre><code class="js">...
+// Load the plugin tasks <span class="keyword">and</span> helpers
+grunt.loadNpmTasks('node-build-script')
+
+// Default task.
+grunt.registerTask('default', <span class="literal">'lint qunit concat min'</span>);
+...</code></pre>
+
+  </section>
+  
+  <section class="step slide" data-x="87151" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>A Grunt Plugin - Usage</h3>
+<pre><code class="sh">$ grunt --<span class="keyword">help</span></code></pre>
+
+  </section>
+  
+  <section class="step slide" data-x="88201" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>A Grunt Plugin - Tasks</h3>
+<ul>
+<li><strong>clean</strong>: Wipe the previous build dirs.</li>
+<li><strong>mkdirs</strong>: Prepares the build dirs.</li>
+<li><strong>css</strong>: Concats, replaces @imports and minifies CSS files.</li>
+<li><strong>rev</strong>: Automate the revving of assets and perform the hash rename</li>
+<li><strong>usemin</strong>: Replaces references to non-minified scripts / stylesheets</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="89251" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>A Grunt Plugin - Tasks</h3>
+<p>In addition to those tasks,
+there are a few additional tasks to help you in the process:
+
+</p>
+<ul>
+<li><strong>serve</strong>: Spawns up a basic local http server (on both pubilsh /
+intermediate folder with different ports).</li>
+</ul>
+<ul>
+<li><strong>connect</strong>:  Spawns up local http sever with socket.io configured,
+it&#39;ll inject a tiny client side script + socket.io lib on <code>*.html</code>
+response.</li>
+</ul>
+<ul>
+<li><strong>reload</strong>: Alias for <code>connect watch:reload</code>.</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="90301" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>socket.io + watch combo</h3>
+<p>Gives you a great development environment
+
+</p>
+<ul>
+<li><p>Automatically reloads your browser whenever a file changes</p>
+</li>
+<li><p>Might re-trigger a given task before reloading</p>
+<ul>
+<li>like re-running the entire build script</li>
+<li>Re-run preprocessors (CoffeeScript, Less, Sass, w/e)</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="91351" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>socket.io + watch combo</h3>
+<p><strong>process and build script needs to be almost immediate in this context</strong>
+
+</p>
+<p>and node is a pretty good candidate for that :p
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="92401" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>An experimental JSDOM based build script</h3>
+<p>The idea grown and original came from @necolas <a href="https://github.com/h5bp/html5-boilerplate/issues/831">proposal</a>.
+
+</p>
+<p>DOM-based build script can tremendously reduce the amount of configuration.
+
+</p>
+<p>If not simply removing the need of confirmation.
+
+</p>
+
+  </section>
+  
+  <section class="step slide" data-x="93451" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>An experimental JSDOM based build script</h3>
+<ul>
+<li>Ideally...</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="94501" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>An experimental JSDOM based build script</h3>
+<ul>
+<li>It just works!</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="95551" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>An experimental JSDOM based build script</h3>
+<p><strong>How it works</strong>
+
+</p>
+<p><a href="https://github.com/h5bp/node-build-script/wiki/dom">https://github.com/h5bp/node-build-script/wiki/dom</a>
+
+</p>
+<ul>
+<li>Works with &quot;plugins&quot;</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="96601" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>JSDOM based - Plugins</h3>
+<p>A plugin is a special jQuery &quot;plugin&quot; that can use the node (or grunt) api to do
+their task.
+
+</p>
+<p>The following plugins are implemented
+
+</p>
+<ul>
+<li><strong>css</strong>
+Relies on @import statement mainly which are inlined (with nested path
+rewrite) to serve a single optimized stylesheet.</li>
+</ul>
+<ul>
+<li><strong>js</strong>
+Concat, minify through uglify and serve a single concat&#39;d / minified script.</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="97651" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>JSDOM Based - Configuration</h3>
+<pre><code class="js">var h5bp = require(<span class="string">"node-build-script"</span>)<span class="comment">;</span>
+
+module<span class="preprocessor">.exports</span> = function(grunt) {
+
+  grunt<span class="preprocessor">.initConfig</span>({
+      ...,
+
+      dom: {
+          files: [<span class="string">"*.html"</span>, <span class="string">"views/**/*.html"</span>],
+          <span class="string">"script[data-build]"</span>    : h5bp<span class="preprocessor">.plugins</span><span class="preprocessor">.script</span>,
+          <span class="string">"link"</span>                  : h5bp<span class="preprocessor">.plugins</span><span class="preprocessor">.link</span>,
+          <span class="string">"img"</span>                   : h5bp<span class="preprocessor">.plugins</span><span class="preprocessor">.img</span>,
+          <span class="string">"script, link, img"</span>     : h5bp<span class="preprocessor">.plugins</span><span class="preprocessor">.rev</span>
+      },
+
+      ...
+  })<span class="comment">;</span>
+
+}<span class="comment">;</span></code></pre>
+
+  </section>
+  
+  <section class="step slide" data-x="98701" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>next h5bp/node-build-script</h3>
+<ul>
+<li><p>Windows support for dom based build</p>
+</li>
+<li><p>Manifest generation using <a href="https://github.com/jamesgpearce/confess">confess</a>
+and <a href="https://github.com/ariya/phantomjs">phantomjs</a></p>
+</li>
+<li><p>Sourcemap generation</p>
+<ul>
+<li>with google closure compiler, until we have a valid node-based solution*</li>
+<li><a href="https://github.com/mozilla/source-map">mozilla/sourcemap</a> might be a pretty good start</li>
+</ul>
+</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="99751" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>next h5bp/node-build-script</h3>
+<ul>
+<li><p>Better and more h5bp init templates.</p>
+</li>
+<li><p>Further integration in init templates of well-known project
+like <a href="https://github.com/twitter/bootstrap">twitter/bootstrap</a>
+or <a href="https://github.com/zurb/foundation">zurb/foundation</a>.</p>
+</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="100801" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>next h5bp/node-build-script</h3>
+<ul>
+<li>inline small images as data-uri</li>
+<li>remove console.log and other debugger statements</li>
+<li>cache manifest creation</li>
+<li>(how?) remove unused CSS</li>
+<li>(how?) dead code elimination</li>
+<li>image compression</li>
+<li>(how) video/audio transcoding</li>
+</ul>
+
+  </section>
+  
+  <section class="step slide" data-x="101851" data-y="-1000" data-z="undefined" data-rotate-x="0" data-rotate-y="0" data-rotate-z="0" data-scale="1">
+    <h3>Try it yourself</h3>
+<p>See the <a href="https://gist.github.com/c20d4310c005e31a5cfe">gist</a>
+
+</p>
+<blockquote>
+<p><a href="https://raw.github.com/gist/c20d4310c005e31a5cfe/install.sh">https://raw.github.com/gist/c20d4310c005e31a5cfe/install.sh</a>
+
+</p>
+</blockquote>
+<pre><code class="sh"><span class="variable">$ </span><span class="identifier">curl</span> <span class="identifier">https</span><span class="symbol">:</span>/<span class="regexp">/raw.github.com/gist</span><span class="regexp">/c20d4310c005e31a5cfe/install</span>.<span class="identifier">sh</span> | <span class="identifier">sh</span></code></pre>
 
   </section>
   ;
