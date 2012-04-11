@@ -1,0 +1,18 @@
+{
+  "author": "mklabs",
+  "name": "slides",
+  "description": "A repo with my slides, or w/e*",
+  "version": "0.0.0",
+  "homepage": "https://mklabs.github.com/slides/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mklabs/slides.git"
+  },
+  "engines": {
+    "node": "0.6.x"
+  },
+  "dependencies": {
+    "grunt-impress": "http://nodeload.github.com/mklabs/grunt-plugins/tarball/grunt-impress",
+    "serve": "~1.0.3"
+  }
+}
